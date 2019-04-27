@@ -25,18 +25,12 @@ class Genome:
             self.nodes[i + num_inputs].layer = 1
 
     def set_layer(self):
-        # node = Node
-        self.layer_node = [[0]] * self.layers
         for layer in range(self.layers):
             smt = []
             for n in self.nodes:
-                # smt = []
                 if n.layer == layer:
-                    print(n.layer)
                     smt.append(n)
-            print(smt)
             self.layer_node.append(smt)
-            # self.layer_node[layer] = smt
 
     def feed_forward(self, inputs):
         results = []
