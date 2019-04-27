@@ -1,6 +1,6 @@
 from node import Node
 from connection_gene import Gene
-from matrix import Matrix
+# from matrix import Matrix
 from random import randrange
 
 
@@ -25,17 +25,18 @@ class Genome:
             self.nodes[i + num_inputs].layer = 1
 
     def set_layer(self):
-        self.layer_node = [None] * self.layers
-        for l in range(self.layers):
+        # node = Node
+        self.layer_node = [[0]] * self.layers
+        for layer in range(self.layers):
             smt = []
             for n in self.nodes:
                 # smt = []
-                if n.layer == l:
+                if n.layer == layer:
                     print(n.layer)
                     smt.append(n)
             print(smt)
-            # self.layer_node.append(smt)
-            self.layer_node[l] = smt
+            self.layer_node.append(smt)
+            # self.layer_node[layer] = smt
 
     def feed_forward(self, inputs):
         results = []
@@ -138,4 +139,4 @@ class Genome:
 
 # a = Matrix(3, 3)
 # print(a.data)
-
+a = Genome(3, 2)
